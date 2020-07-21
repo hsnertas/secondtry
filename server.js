@@ -1,25 +1,31 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require("express");
+const logger = require("morgan");
+const mongoose = require("mongoose");
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3500;
 
 const app = express();
 
+app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.use(express.static('public'));
-
-mongoose.Promise=global.Promise;
+app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:Hme18161816@ds149700.mlab.com:49700/heroku_wpcrwsf6', {
-    useNewUrlParser: true,
-    useMongoClient: true
+    useNewUrlParser: true
 });
 
-require('./routes/apiRoutes')(app);
-require('./routes/htmlRoutes')(app);
+const db = require("./models");
+
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}`);
+  console.log(`App running on port ${PORT}!`);
 });
+
+
+
+
+
+
