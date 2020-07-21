@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./assets/css/style.css"/>
+  <link rel="stylesheet" href="./assets/css/workout-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <title>Fitness Chart</title>
+</head>
+
+<body>
+  <nav>
+    <a href="/">Fitness Tracker</a>
+  </nav>
+  <div class="wrapper workout">
+    <h1 class="ui header center aligned stats-header">Workout Dashboard</h1>
+    <div class="ui two column grid container workout">
+      <div class="column">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="column">
+        <canvas id="canvas2"></canvas>
+      </div>
+      <div class="column">
+        <canvas id="canvas3"></canvas>
+      </div>
+      <div class="column">
+        <canvas id="canvas4"></canvas>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/js/api.js"></script>
+  <script src="./assets/js/stats.js"></script>
+</body>
+
+</html>
