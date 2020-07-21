@@ -17,8 +17,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:Hme18161816@ds149700
     useMongoClient: true
 });
 
-require('./routes/api-routes')(app);
-require('./routes/html-routes')(app);
+require('/routes/apiRoutes')(app);
+require('/routes/htmlRoutes')(app);
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}`);
